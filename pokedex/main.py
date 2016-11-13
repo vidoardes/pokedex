@@ -12,9 +12,15 @@ class pokemon:
 
         for poke_type in self.types:
             if poke_type == "Grass":
-                self.type_list += "\x1b[6;30;42m " + poke_type + " \x1b[0m "
+                self.type_list += "\x1b[6;30;42m Grass \x1b[0m "
             elif poke_type == "Poison":
-                self.type_list += "\x1b[0;37;45m " + poke_type + " \x1b[0m "
+                self.type_list += "\x1b[0;37;45m Poison \x1b[0m "
+            elif poke_type == "Fire":
+                self.type_list += "\x1b[6;37;41m Fire \x1b[0m "
+            elif poke_type == "Flying":
+                self.type_list += "\x1b[6;34;37m Flying \x1b[0m "
+            else:
+                self.type_list += " " + poke_type + " "
 
         self.evo_list = ""
 

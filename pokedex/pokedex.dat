@@ -29,5 +29,35 @@
          "description": "There is a large flower on Venusaur's back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower's aroma soothes the emotions of people.",
          "pre_evolutions": ["Bulbasaur", "Ivysaur"],
          "evolutions": []
+     }, {
+         "name": "Charmander",
+         "number": "#004",
+         "types": ["Fire"],
+         "category": "Lizard",
+         "height": "0.6m",
+         "weight": "8.5kg",
+         "description": "The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely.",
+         "pre_evolutions": [],
+         "evolutions": ["Charmeleon", "Charizard"]
+     }, {
+         "name": "Charmeleon",
+         "number": "#004",
+         "types": ["Fire"],
+         "category": "Lizard",
+         "height": "1.1m",
+         "weight": "19.0kg",
+         "description": "Charmeleon mercilessly destroys its foes using its sharp claws. If it encounters a strong foe, it turns aggressive. In this excited state, the flame at the tip of its tail flares with a bluish white color.",
+         "pre_evolutions": ["Charmander"],
+         "evolutions": ["Charizard"]
+     }, {
+         "name": "Charizard",
+         "number": "#004",
+         "types": ["Fire", "Flying"],
+         "category": "Lizard",
+         "height": "1.7",
+         "weight": "90.5kg",
+         "description": "Charizard flies around the sky in search of powerful opponents. It breathes fire of such great heat that it melts anything. However, it never turns its fiery breath on any opponent weaker than itself.",
+         "pre_evolutions": ["Charmander","Charmeleon"],
+         "evolutions": []
      }]
  }
