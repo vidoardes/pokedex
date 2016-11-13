@@ -18,7 +18,9 @@ class pokemon:
             elif poke_type == "Fire":
                 self.type_list += "\x1b[6;37;41m Fire \x1b[0m "
             elif poke_type == "Flying":
-                self.type_list += "\x1b[6;34;37m Flying \x1b[0m "
+                self.type_list += "\x1b[6;34;47m Flying \x1b[0m "
+            elif poke_type == "Water":
+                self.type_list += "\x1b[1;37;44m Water \x1b[0m "
             else:
                 self.type_list += " " + poke_type + " "
 

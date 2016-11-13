@@ -41,9 +41,9 @@
          "evolutions": ["Charmeleon", "Charizard"]
      }, {
          "name": "Charmeleon",
-         "number": "#004",
+         "number": "#005",
          "types": ["Fire"],
-         "category": "Lizard",
+         "category": "Flame",
          "height": "1.1m",
          "weight": "19.0kg",
          "description": "Charmeleon mercilessly destroys its foes using its sharp claws. If it encounters a strong foe, it turns aggressive. In this excited state, the flame at the tip of its tail flares with a bluish white color.",
@@ -51,13 +51,43 @@
          "evolutions": ["Charizard"]
      }, {
          "name": "Charizard",
-         "number": "#004",
+         "number": "#006",
          "types": ["Fire", "Flying"],
-         "category": "Lizard",
-         "height": "1.7",
+         "category": "Flame",
+         "height": "1.7m",
          "weight": "90.5kg",
          "description": "Charizard flies around the sky in search of powerful opponents. It breathes fire of such great heat that it melts anything. However, it never turns its fiery breath on any opponent weaker than itself.",
          "pre_evolutions": ["Charmander","Charmeleon"],
+         "evolutions": []
+     }, {
+         "name": "Squirtle",
+         "number": "#007",
+         "types": ["Water"],
+         "category": "Tiny Turtle",
+         "height": "0.9m",
+         "weight": "9.0kg",
+         "description": "Squirtle's shell is not merely used for protection. The shell's rounded shape and the grooves on its surface help minimize resistance in water, enabling this Pokémon to swim at high speeds.",
+         "pre_evolutions": [],
+         "evolutions": ["Wartortle","Blastoise"]
+     }, {
+         "name": "Wartortle",
+         "number": "#008",
+         "types": ["Water"],
+         "category": "Turtle",
+         "height": "1.0m",
+         "weight": "22.5kg",
+         "description": "Its tail is large and covered with a rich, thick fur. The tail becomes increasingly deeper in color as Wartortle ages. The scratches on its shell are evidence of this Pokémon's toughness as a battler.",
+         "pre_evolutions": ["Squirtle"],
+         "evolutions": ["Blastoise"]
+     }, {
+         "name": "Blastoise",
+         "number": "#009",
+         "types": ["Water"],
+         "category": "Shellfish",
+         "height": "1.6m",
+         "weight": "85.5kg",
+         "description": "Blastoise has water spouts that protrude from its shell. The water spouts are very accurate. They can shoot bullets of water with enough accuracy to strike empty cans from a distance of over 160 feet.",
+         "pre_evolutions": ["Squirtle", "Wartortle"],
          "evolutions": []
      }]
  }
