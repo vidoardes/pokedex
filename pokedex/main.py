@@ -1,15 +1,21 @@
+"""Pokedex - A Pokemon stat viewer in Python 3"""
 import os
 import json
 import textwrap
 
 
-class pokemon:
+class Pokemon:
+    """Create a pokemon instance from a dictionary of attrubutes"""
     def __init__(self, dictionary):
+        """Create a pokemon and load stats from dictionary"""
+        self.type_list = ""
+        self.evo_list = ""
+
+        # Create attributes for every key in provided dictionary
         for k, v in dictionary.items():
             setattr(self, k, v)
 
-        self.type_list = ""
-
+        # Build a list of types for display purposes
         for poke_type in self.types:
             if poke_type == "Grass":
                 self.type_list += "\x1b[6;30;42m Grass \x1b[0m "
@@ -24,8 +30,7 @@ class pokemon:
             else:
                 self.type_list += " " + poke_type + " "
 
-        self.evo_list = ""
-
+        # Build a list of evolutions for display purposes
         if len(self.evolutions) > 0 or len(self.pre_evolutions) > 0:
             if len(self.pre_evolutions) > 0:
                 self.evo_list += " -> ".join(self.pre_evolutions)
@@ -33,7 +38,7 @@ class pokemon:
             if self.evo_list != "":
                 self.evo_list += " -> "
 
-            self.evo_list += '\033[1m' + self.name + '\x1b[0m'
+            self.evo_list += "\033[1m" + self.name + "\x1b[0m"
 
             if len(self.evolutions) > 0:
                 self.evo_list += " -> "
@@ -42,6 +47,7 @@ class pokemon:
             self.evo_list = "None"
 
     def __str__(self):
+        """Print pokemon stats page"""
         return ("\033[1m{} {}\x1b[0m\n"
                 "{} Pokémon\n"
                 "{}\n\n"
@@ -56,29 +62,36 @@ class pokemon:
 
 
 def main_menu():
+    """Provide interface for finding and viewing pokemon details"""
     select_pokemon = ""
     pokemon_stats = ""
-    pokedex = json.loads(open('pokedex.dat', encoding='utf-8').read())["pokemon"]
 
-    os.system('cls')
-    print("Welcome to the Pokédex!")
+    # Read pokedex from JSON file and parse as list of dictioaries
+    pokedex_json = open("pokedex.dat", encoding="utf-8").read()
+    pokedex = json.loads(pokedex_json)["pokemon"]
 
+    os.system("cls")
+    print("\n                       \033[1mWelcome to the Pokédex!\x1b[0m")
+    print("                             #001 - #151")
+
+    # Loop until user provides pokemon name that exists in pokedex
     while pokemon_stats == "":
-        select_pokemon = input("Which Pokémon would you like to see details for?: ")
+        select_pokemon = input("\nWhich Pokémon would you like to see details for?: ").title()
         try:
-            pokemon_stats = next(stats for stats in pokedex if stats['name'] == select_pokemon)
+            pokemon_stats = next(stats for stats in pokedex if stats["name"] == select_pokemon)
         except:
             print("\nNo Pokémon found with the name \"{}\"\n".format(select_pokemon))
 
+        # If a valid pokemon matched, display details
         if pokemon_stats != "":
-            active_pokemon = pokemon(pokemon_stats)
-            os.system('cls')
+            active_pokemon = Pokemon(pokemon_stats)
+            os.system("cls")
             print(active_pokemon)
             input("\n\x1b[6;30;47m << Back to main menu \x1b[0m")
             main_menu()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     abspath = os.path.abspath(__file__)
     dname = os.path.dirname(abspath)
     os.chdir(dname)
