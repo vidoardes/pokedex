@@ -10,13 +10,14 @@ class Pokemon:
         """Create a pokemon and load stats from dictionary"""
         self.type_list = ""
         self.evo_list = ""
+        self.level = 5
 
         # Create attributes for every key in provided dictionary
         for k, v in dictionary.items():
             setattr(self, k, v)
 
         # Build a list of types for display purposes
-        for poke_type in self.types:
+        for poke_type in self.type:
             if poke_type == "Grass":
                 self.type_list += "\x1b[6;30;42m Grass \x1b[0m "
             elif poke_type == "Poison":
@@ -48,13 +49,16 @@ class Pokemon:
 
     def __str__(self):
         """Print pokemon stats page"""
-        return ("\033[1m{} {}\x1b[0m\n"
+        return ("\033[1m{} {}\x1b[0m "
+                "({} {})\n"
                 "{} Pokémon\n"
                 "{}\n\n"
                 "{}\n\n"
                 "Evolutions: {}"
                 ).format(self.number,
                          self.name,
+                         self.name_jp,
+                         self.name_jp_phonetic,
                          self.category,
                          self.type_list,
                          textwrap.fill(self.description, 70),
@@ -72,11 +76,12 @@ def main_menu():
 
     os.system("cls")
     print("\n                       \033[1mWelcome to the Pokédex!\x1b[0m")
+    print("\n                     Generation I (Kanto Reigon)")
     print("                             #001 - #151")
 
     # Loop until user provides pokemon name that exists in pokedex
     while pokemon_stats == "":
-        select_pokemon = input("\nWhich Pokémon would you like to see details for?: ").title()
+        select_pokemon = input("\n\nWhich Pokémon would you like to see details for?: ").title()
         try:
             pokemon_stats = next(stats for stats in pokedex if stats["name"] == select_pokemon)
         except:
@@ -92,6 +97,7 @@ def main_menu():
 
 
 if __name__ == "__main__":
+    os.system("chcp 65001")
     abspath = os.path.abspath(__file__)
     dname = os.path.dirname(abspath)
     os.chdir(dname)

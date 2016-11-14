@@ -61,14 +61,20 @@
          "evolutions": []
      }, {
          "name": "Squirtle",
-         "number": "#007",
-         "types": ["Water"],
+         "name_jp": "ゼニガメ",
+         "name_jp_phonetic": "Zenigame",
+         "number": "007",
+         "type": ["Water"],
+         "type_weakness": ["Grass", "Electic"],
+         "type_advantage": ["Fire", "Ice", "Steel", "Water"],
          "category": "Tiny Turtle",
-         "height": "0.9m",
+         "height": "0.51m",
          "weight": "9.0kg",
-         "description": "Squirtle's shell is not merely used for protection. The shell's rounded shape and the grooves on its surface help minimize resistance in water, enabling this Pokémon to swim at high speeds.",
+         "description": "After birth, its back swells and hardens into a shell. Powerfully sprays foam from its mouth.",
          "pre_evolutions": [],
-         "evolutions": ["Wartortle","Blastoise"]
+         "evolutions": ["Wartortle","Blastoise"],
+         "location": ["Pallet Town", "Vermillion City"],
+         "moves": ["Tackle", "Tail Whip"]
      }, {
          "name": "Wartortle",
          "number": "#008",
